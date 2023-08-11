@@ -15,16 +15,16 @@ defaults
         errorfile 504 /etc/haproxy/errors/504.http
 backend web-backend
         balance roundrobin
-        server 5755-web-01 3.82.46.106:80 check
-        server 5755-web-02 3.92.51.230:80 check
+        server 5685-web-01 54.234.59.22:80 check
+        server 5685-web-02 54.235.58.174:80 check
 frontend http-in
         bind *:80
-        bind *:443 ssl crt /etc/letsencrypt/live/www.beritha.tech/fullchain.pem
+        bind *:443 ssl crt /etc/letsencrypt/live/www.ruthdev.tech/fullchain.pem
         mode http
         default_backend web-backend
 
 frontend https_frontend
-        bind *:443 ssl crt /etc/letsencrypt/live/www.beritha.tech/fullchain.pem
+        bind *:443 ssl crt /etc/letsencrypt/live/www.ruthdev.tech/fullchain.pem
         mode http
         default_backend web-backend
 
